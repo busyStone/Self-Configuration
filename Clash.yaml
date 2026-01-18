@@ -41,7 +41,7 @@ tun:
 
 dns:
   enable: true
-  listen: 0.0.0.0:1053
+  listen: 127.0.0.1:1053
 
   # 先稳：IPv6 容易造成漏网/直连；确认全链路没问题再开
   ipv6: false
@@ -79,6 +79,9 @@ dns:
 
   # 让 DNS 查询也尽量遵循规则（减少“解析链路泄漏”）
   respect-rules: true
+  proxy-server-nameserver:
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
 
   fake-ip-filter:
     - "*.lan"
